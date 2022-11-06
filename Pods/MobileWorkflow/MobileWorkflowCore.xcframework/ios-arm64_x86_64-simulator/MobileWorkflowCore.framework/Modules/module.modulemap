@@ -1,0 +1,11 @@
+framework module MobileWorkflowCore {
+  umbrella header "MobileWorkflowCore.h"
+
+  export *
+  module * { export * }
+}
+
+module MobileWorkflowCore.Swift {
+  header "MobileWorkflowCore-Swift.h"
+  requires objc
+}

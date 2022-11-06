@@ -1,0 +1,28 @@
+PODS:
+  - MobileWorkflow (2.1.6):
+    - MobileWorkflow/Core (= 2.1.6)
+  - MobileWorkflow/Core (2.1.6)
+  - UserDefaultsPlugin (1.0.0):
+    - UserDefaultsPlugin/Core (= 1.0.0)
+  - UserDefaultsPlugin/Core (1.0.0):
+    - MobileWorkflow (~> 2.1.6)
+
+DEPENDENCIES:
+  - MobileWorkflow (~> 2.1.6)
+  - UserDefaultsPlugin (from `UserDefaultsPlugin.podspec`)
+
+SPEC REPOS:
+  https://github.com/FutureWorkshops/MWPodspecs.git:
+    - MobileWorkflow
+
+EXTERNAL SOURCES:
+  UserDefaultsPlugin:
+    :path: UserDefaultsPlugin.podspec
+
+SPEC CHECKSUMS:
+  MobileWorkflow: 68f65384ec75ac20ab9f94cb8b43156f763555a3
+  UserDefaultsPlugin: d779f83eafb9900a59fbfe866911bc38b22d8f31
+
+PODFILE CHECKSUM: 0ba73d862ecc48a97968ee2e30efbedae6c36029
+
+COCOAPODS: 1.11.3

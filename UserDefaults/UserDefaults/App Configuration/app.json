@@ -1,0 +1,11 @@
+{
+  "id": 0,
+  "name": "UserDefaults",
+  "systemTintColor": "blue",
+  "servers": [],
+  "navigation": {
+    "style": "list",
+    "list": [{"step":"e468749d-3df7-4582-8e07-552fedc45200"}]
+  },
+  "steps": [{"id":"e468749d-3df7-4582-8e07-552fedc45200","type":"io.app-rail.userdefaults.save-default","properties":{"title":"SaveDefaultStep","value":"Lorum ipsum","key":"Lorum ipsum"}}]
+}

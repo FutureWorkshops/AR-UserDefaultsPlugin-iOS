@@ -1,0 +1,6 @@
+framework module Pods_MobileWorkflow_UserDefaults {
+  umbrella header "Pods-MobileWorkflow-UserDefaults-umbrella.h"
+
+  export *
+  module * { export * }
+}

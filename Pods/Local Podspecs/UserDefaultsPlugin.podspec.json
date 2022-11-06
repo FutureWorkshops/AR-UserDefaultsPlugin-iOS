@@ -1,0 +1,34 @@
+{
+  "name": "UserDefaultsPlugin",
+  "version": "1.0.0",
+  "summary": "A plugin for AppRail.",
+  "homepage": "https://app-rail.io",
+  "license": {
+    "type": "Copyright",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Future Workshops": "info@futureworkshops.com"
+  },
+  "source": {
+    "git": "https://github.com",
+    "tag": "1.0.0"
+  },
+  "platforms": {
+    "ios": "15.0"
+  },
+  "swift_versions": "5",
+  "default_subspecs": "Core",
+  "subspecs": [
+    {
+      "name": "Core",
+      "dependencies": {
+        "MobileWorkflow": [
+          "~> 2.1.6"
+        ]
+      },
+      "source_files": "UserDefaultsPlugin/UserDefaultsPlugin/**/*.swift"
+    }
+  ],
+  "swift_version": "5"
+}
