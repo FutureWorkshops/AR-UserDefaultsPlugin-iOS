@@ -43,8 +43,8 @@ public class LoadDefaultStepViewController: MWLoadingStepViewController {
     
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        UserDefaults.standard.string(forKey: self.loadDefaultStep.key)
-        
+        let value = UserDefaults.standard.string(forKey: self.loadDefaultStep.key)
+        self.loadDefaultStep.navigator.continue(storing: value)
         self.isLoading = true
         Timer.scheduledTimer(withTimeInterval: TimeInterval(self.interval), repeats: false) { [weak self] _ in
             self?.isLoading = false
