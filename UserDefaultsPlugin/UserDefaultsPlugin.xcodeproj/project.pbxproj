@@ -14,6 +14,7 @@
 		B11F5FEA262893DE00EF2283 /* UserDefaultsPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = B11F5FDC262893DE00EF2283 /* UserDefaultsPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B11F601526289B5A00EF2283 /* UserDefaultsPluginStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11F601426289B5A00EF2283 /* UserDefaultsPluginStruct.swift */; };
 		C2BCE3CF09025D4068DA9126 /* Pods_MobileWorkflow_UserDefaultsPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1E2ACEBB357DA13423AFB3 /* Pods_MobileWorkflow_UserDefaultsPlugin.framework */; };
+		C9AF4978292273B100A55081 /* LoadDefaultStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AF4977292273B100A55081 /* LoadDefaultStep.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		B11F5FE9262893DE00EF2283 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B11F601426289B5A00EF2283 /* UserDefaultsPluginStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsPluginStruct.swift; sourceTree = "<group>"; };
 		B93A8E8EC15ACB09E04222EB /* Pods_UserDefaultsPluginTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UserDefaultsPluginTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9AF4977292273B100A55081 /* LoadDefaultStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadDefaultStep.swift; sourceTree = "<group>"; };
 		D26EAA83FFE760D3D537836E /* Pods-MobileWorkflowForms-UserDefaultsPlugin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileWorkflowForms-UserDefaultsPlugin.release.xcconfig"; path = "Target Support Files/Pods-MobileWorkflowForms-UserDefaultsPlugin/Pods-MobileWorkflowForms-UserDefaultsPlugin.release.xcconfig"; sourceTree = "<group>"; };
 		EB1E2ACEBB357DA13423AFB3 /* Pods_MobileWorkflow_UserDefaultsPlugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileWorkflow_UserDefaultsPlugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6E5D39E427F1FED73B7987D /* Pods-UserDefaultsPluginTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UserDefaultsPluginTests.debug.xcconfig"; path = "Target Support Files/Pods-UserDefaultsPluginTests/Pods-UserDefaultsPluginTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				B11F5FDC262893DE00EF2283 /* UserDefaultsPlugin.h */,
 				B11F5FDD262893DE00EF2283 /* Info.plist */,
 				70A7F5A62D0A97BCBC96B9C1 /* SaveDefaultStep.swift */,
+				C9AF4977292273B100A55081 /* LoadDefaultStep.swift */,
 			);
 			path = UserDefaultsPlugin;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			files = (
 				B11F601526289B5A00EF2283 /* UserDefaultsPluginStruct.swift in Sources */,
 				34B2A7EF664253A0004CCAB9 /* SaveDefaultStep.swift in Sources */,
+				C9AF4978292273B100A55081 /* LoadDefaultStep.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
