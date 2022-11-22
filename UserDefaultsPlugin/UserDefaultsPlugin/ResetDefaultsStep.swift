@@ -28,11 +28,19 @@ public class ResetDefaultsStepViewController: MWLoadingStepViewController {
     
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        UserDefaults.resetStandardUserDefaults()
+        resetDefaults()
         self.isLoading = true
         Timer.scheduledTimer(withTimeInterval: TimeInterval(self.interval), repeats: false) { [weak self] _ in
             self?.isLoading = false
             self?.goForward()
+        }
+    }
+    
+    private func resetDefaults() {
+        let defaults = UserDefaults.standard
+        let dictionary = defaults.dictionaryRepresentation()
+        dictionary.keys.forEach { key in
+            defaults.removeObject(forKey: key)
         }
     }
     
