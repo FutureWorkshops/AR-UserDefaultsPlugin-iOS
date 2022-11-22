@@ -16,7 +16,8 @@ public struct UserDefaultsPluginStruct: Plugin {
 enum UserDefaultsStepType: String, StepType, CaseIterable {
     case step1 = "io.app-rail.userdefaults.save-default"
     case step2 = "io.app-rail.userdefaults.load-default"
-    
+    case step3 = "io.app-rail.userdefaults.reset-defaults"
+
     var typeName: String {
         return self.rawValue
     }
@@ -25,6 +26,7 @@ enum UserDefaultsStepType: String, StepType, CaseIterable {
         switch self {
         case .step1: return SaveDefaultStep.self
         case .step2: return LoadDefaultStep.self
+        case .step3: return ResetDefaultsStep.self
         }
     }
 }
