@@ -11,7 +11,7 @@ import SwiftUI
 public class ResetDefaultsStep: ObservableStep {
 
     public override func instantiateViewController() -> StepViewController {
-        SaveDefaultStepViewController(step: self)
+        ResetDefaultsStepViewController(step: self)
     }
 }
 
