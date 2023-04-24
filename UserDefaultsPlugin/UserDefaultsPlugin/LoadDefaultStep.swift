@@ -8,31 +8,16 @@ import Foundation
 import MobileWorkflowCore
 import SwiftUI
 
-public class LoadDefaultStep: ObservableStep {
-    let key: String
+public class LoadDefaultStep: ObservableStep, BuildableStepWithMetadata {
+    public let properties: UserDefaultsLoadDefaultMetadata
 
-    public init(identifier: String, session: Session, services: StepServices, key: String) {
-        self.key = key
-        super.init(identifier: identifier, session: session, services: services)
+    public required init(properties: UserDefaultsLoadDefaultMetadata, session: Session, services: StepServices) {
+        self.properties = properties
+        super.init(identifier: properties.id, session: session, services: services)
     }
 
     public override func instantiateViewController() -> StepViewController {
         LoadDefaultStepViewController(step: self)
-    }
-}
-
-extension LoadDefaultStep: BuildableStep {
-
-    public static var mandatoryCodingPaths: [CodingKey] {
-        ["key"]
-    }
-
-    public static func build(stepInfo: StepInfo, services: StepServices) throws -> Step {
-        guard let key = stepInfo.data.content["key"] as? String else {
-            throw ParseError.invalidStepData(cause: "Mandatory key property not found")
-        }
-        
-        return LoadDefaultStep(identifier: stepInfo.data.identifier, session: stepInfo.session, services: services, key: key)
     }
 }
 
@@ -43,7 +28,7 @@ public class LoadDefaultStepViewController: MWLoadingStepViewController {
     
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let value = UserDefaults.standard.string(forKey: self.loadDefaultStep.key)
+        let value = UserDefaults.standard.string(forKey: self.loadDefaultStep.properties.key)
         self.loadDefaultStep.navigator.continue(storing: value)
         self.isLoading = true
         Timer.scheduledTimer(withTimeInterval: TimeInterval(self.interval), repeats: false) { [weak self] _ in
@@ -54,4 +39,40 @@ public class LoadDefaultStepViewController: MWLoadingStepViewController {
     
 }
 
+public class UserDefaultsLoadDefaultMetadata: StepMetadata {
+    enum CodingKeys: String, CodingKey {
+        case key
+    }
+
+    let key: String
+
+    init(id: String, title: String, key: String, next: PushLinkMetadata?, links: [LinkMetadata]) {
+        self.key = key
+        super.init(id: id, type: "io.app-rail.userdefaults.load-default", title: title, next: next, links: links)
+    }
+
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.key = try container.decode(String.self, forKey: .key)
+        try super.init(from: decoder)
+    }
+
+    public override func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(self.key, forKey: .key)
+        try super.encode(to: encoder)
+    }
+}
+
+public extension StepMetadata {
+    static func userDefaultsLoadDefault(id: String, title: String, key: String, next: PushLinkMetadata? = nil, links: [LinkMetadata] = []) -> UserDefaultsLoadDefaultMetadata {
+        UserDefaultsLoadDefaultMetadata(
+            id: id,
+            title: title,
+            key: key,
+            next: next,
+            links: links
+        )
+    }
+}
 
