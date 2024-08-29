@@ -2,9 +2,9 @@ PODS:
   - MobileWorkflow (2.1.6):
     - MobileWorkflow/Core (= 2.1.6)
   - MobileWorkflow/Core (2.1.6)
-  - UserDefaultsPlugin (1.0.0):
-    - UserDefaultsPlugin/Core (= 1.0.0)
-  - UserDefaultsPlugin/Core (1.0.0):
+  - UserDefaultsPlugin (1.0.1):
+    - UserDefaultsPlugin/Core (= 1.0.1)
+  - UserDefaultsPlugin/Core (1.0.1):
     - MobileWorkflow (~> 2.1.6)
 
 DEPENDENCIES:
@@ -21,8 +21,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   MobileWorkflow: 68f65384ec75ac20ab9f94cb8b43156f763555a3
-  UserDefaultsPlugin: d779f83eafb9900a59fbfe866911bc38b22d8f31
+  UserDefaultsPlugin: da0825f50aadd25c25b5f3ad5320a78e952a2fb9
 
 PODFILE CHECKSUM: 0ba73d862ecc48a97968ee2e30efbedae6c36029
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.15.2
